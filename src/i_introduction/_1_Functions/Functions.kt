@@ -28,5 +28,10 @@ fun todoTask1(collection: Collection<Int>) = TODO(
 
 
 fun task1(collection: Collection<Int>): String {
-    todoTask1(collection)
+    val sb = StringBuilder()
+    sb.append("{")
+    collection.map({ element -> sb.append(element).append(", ") })
+    sb.setLength(sb.length() - 2) // remove last ", "
+    sb.append("}")
+    return sb.toString()
 }
